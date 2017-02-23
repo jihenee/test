@@ -1,0 +1,54 @@
+{% extends "todos/base.html.twig" %}
+{% block title %}
+    {{ parent() }} Mon compte - édition - photo
+{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+{% block content %}
+    <div class="container">
+
+        <div class="row">
+
+            <!-- Blog Entries Column -->
+            <div class="col-md-8">
+
+                <h1 class="page-header">
+                    Mon compte - Modification photo
+
+                </h1>
+
+                <div class="well block-actu-add">
+                    <div class="row">
+                        <div class="col-sm-4">
+
+                            {{ form_start(form) }}
+                            {{ form_label(form.file, 'Photo : ') }}
+                            {{ form_errors(form.file) }}
+                            {{ form_widget(form.file) }}<br>
+                            {{ form_widget(form.Save, {attr:{'value':'Sauver', 'class':'btn btn-default'}}) }}
+                            {{ form_end(form) }}
+                        </div>
+
+                        <div class="col-sm-4 bloc_photo_edit">
+
+                            {% if user.image.url is defined %}
+                                <img src="{{ asset('photo/') ~ user.image.url }}" alt="{{ user.image.alt }}"
+                                     title="{{ user.image.title }}"
+                                     class="rounded-img">
+                            {% else %}
+                                <img src="{{ asset('photo/') ~ 'none.png' }}" alt="none.jpg"
+                                     title="{{ user.username }}"
+                                     class="rounded-img">
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}
