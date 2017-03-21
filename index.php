@@ -15,7 +15,7 @@
  
 session_start(); 
 
-if (isset($_SESSION ['students'])) {
+if (isset($_SESSION ['student'])) {
   header("location: students/index.php") ;
 }
 
