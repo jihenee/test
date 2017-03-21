@@ -31,7 +31,7 @@ require_once 'includes/database_config.php';
 include 'includes/display_errors.php';
 include 'includes/make_lang.php';
 
-echo $_SESSION['DatabaseError'];
+echo $_SESSION['DatabaseErrors'];
 
 /*------------------------------------ MODE SITE -----------------------------------*/
 
